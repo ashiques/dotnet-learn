@@ -1,10 +1,12 @@
 ﻿
 
+using System.Numerics;
+using System.Reflection.PortableExecutable;
 using System.Security.Cryptography;
 
-namespace Sample{
-    
-    class Program{
+namespace Sample
+{
+    partial class Program{
         enum Value
         {
             TEST,
@@ -22,6 +24,7 @@ namespace Sample{
             }
 
             System.Console.WriteLine(handler("Value"));
+            // if else if else simple logic
             Value sample =  Value.TEST;
             if (sample==Value.TEST)
             {
@@ -33,11 +36,59 @@ namespace Sample{
             {
                 System.Console.WriteLine($"inside {Value.TEST2}");
             }
+
+            // switch case simple syntax
+            switch (sample)
+            {
+                case Value.TEST:
+                    System.Console.WriteLine($"inside {Value.TEST}");
+                    break;
+                case Value.TEST1:
+                    System.Console.WriteLine($"inside {Value.TEST1}");
+                        break;
+                default:
+                    System.Console.WriteLine($"inside {Value.TEST2}");
+                    break;
+            };
+
+            // using calculator
+            try
+            {
+                System.Console.WriteLine(Calculator(4,0,"/"));
+            }
+            catch (DivideByZeroException)
+            {
+                System.Console.WriteLine("Division by zero invalid operation!");
+            }
+            
         }
 
         static String handler(string value){
             return value.ToUpper();
 
         }
+        
+
+        static Double Calculator(int val1, int val2,string op){
+            if(val2==0){
+                throw new DivideByZeroException();
+            }else{
+            switch (op)
+            {   
+                case "+":
+                    return val1+val2;
+                case "-":
+                    return val1-val2;
+                case "*":
+                    return val1*val2;
+                case "/":
+                    return Convert.ToDouble(val1/val2);
+                default:
+                    return 0.0;
+            }
+            }
+        }
     }
+
+    
 }
