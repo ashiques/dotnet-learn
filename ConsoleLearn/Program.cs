@@ -1,5 +1,8 @@
 ﻿namespace Sample
+
+
 {
+    using Operation;
     partial class Program
     {
         enum Value
@@ -51,12 +54,19 @@
             // using calculator
             try
             {
-                System.Console.WriteLine(Calculator(4, 0, "/"));
+                System.Console.WriteLine(Calculator(4, 2, "0"));
             }
             catch (DivideByZeroException)
             {
                 System.Console.WriteLine("Division by zero invalid operation!");
             }
+            catch (InvalidOperationException)
+            {
+                System.Console.WriteLine("Invalid operation");
+            };
+
+            string[] texts = { "Mazda", "Volvo", "Ford", "BMW" };
+            OperationClass.whileLoop(texts);
 
         }
 
@@ -86,7 +96,7 @@
                     case "/":
                         return Convert.ToDouble(val1 / val2);
                     default:
-                        return 0.0;
+                        throw new InvalidOperationException();
                 }
             }
         }
