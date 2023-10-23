@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using sample;
+﻿using inheritance;
 
 namespace Sample
 
@@ -114,6 +113,29 @@ namespace Sample
 
             System.Console.WriteLine($"Song count: {Song.songCount}");
 
+            // inheritance
+            Chef chef = new Chef();
+            chef.MakeChicken();
+
+            // method overriding
+            Chef chef2 = new ItalianChef();
+            chef2.MakeSpecialDish();
+
+
+            //Abstract class
+            AbstractCar abstractCar = new HondaCar();
+            abstractCar.Honk();
+            abstractCar.move();
+
+            // implements handling
+            Pig pig = new Pig();
+            pig.animalSound();
+            pig.run();
+
+
+            Cat cat = new Cat();
+            cat.animalSound();
+            cat.run();
 
         }
 
