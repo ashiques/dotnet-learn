@@ -1,4 +1,4 @@
-namespace Operation
+namespace Sample
 {
     class OperationClass
     {
@@ -11,6 +11,16 @@ namespace Operation
                 i++;
             }
 
+        }
+
+        public static void nameGuessGame(string name)
+        {
+
+            while (name == "Tessa")
+            {
+                System.Console.WriteLine("You Win Guessing!!");
+                break;
+            }
         }
 
 

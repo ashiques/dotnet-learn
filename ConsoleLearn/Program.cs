@@ -1,8 +1,11 @@
-﻿namespace Sample
+﻿using System.Reflection;
+using sample;
+
+namespace Sample
 
 
 {
-    using Operation;
+
     partial class Program
     {
         enum Value
@@ -68,6 +71,50 @@
             string[] texts = { "Mazda", "Volvo", "Ford", "BMW" };
             OperationClass.whileLoop(texts);
 
+            // Guessing Operant
+            OperationClass.nameGuessGame("Guess");
+            OperationClass.nameGuessGame("Tessa");
+
+            // object oriented
+            Book book = new Book();
+            book.author = "JK Rowling";
+            book.title = "Harry Potter";
+            book.pages = 400;
+
+            Book book1 = new Book();
+            book1.author = "George RR Martin";
+            book1.title = "Game Of Thrones";
+            book1.pages = 600;
+
+            // With constructor
+            Book book2 = new Book(author: "Me", title: "Salmon Life", pages: 150);
+            System.Console.WriteLine(book2.title);
+
+            System.Console.WriteLine(book.author);
+            System.Console.WriteLine(book1.author);
+
+
+            Student student = new Student("Jim", "business", 2.7);
+            Student student1 = new Student("Pam", "art", 4.5);
+
+            System.Console.WriteLine(student.toString());
+            System.Console.WriteLine(student1.toString());
+
+
+            Movie movie = new Movie("Shawshank Redemtion", "Kevin", "PG");
+
+
+            Movie movie1 = new Movie("Avatar 2", "James", "R");
+
+            System.Console.WriteLine(movie.Rating);
+
+            // static attributes
+            Song song = new Song("Holiday", "Green Day", 200);
+            Song song1 = new Song("Kashmir", "Led Zeppelin", 150);
+
+            System.Console.WriteLine($"Song count: {Song.songCount}");
+
+
         }
 
         static String handler(string value)
@@ -76,7 +123,7 @@
 
         }
 
-
+        // static method example
         static Double Calculator(int val1, int val2, string op)
         {
             if (val2 == 0)
