@@ -1,4 +1,5 @@
 ﻿using inheritance;
+using filehandling;
 
 namespace Sample
 
@@ -137,6 +138,13 @@ namespace Sample
             cat.animalSound();
             cat.run();
 
+            // file handling and static methods usage
+            var filename = "filename.txt";
+            //writing into file
+            FileHandler.writeToFile(filename, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ex at neque tincidunt elementum eget id felis. Nam tempus semper quam id consectetur. Nulla odio risus, sodales eu cursus eu, venenatis ac justo. Nam porta enim ut venenatis vulputate. Nulla in eros sapien. Vivamus mollis fringilla elit quis pretium. Suspendisse a feugiat ante. Suspendisse a blandit erat, id iaculis erat. Mauris posuere mattis iaculis. Suspendisse at luctus urna. Fusce tristique tempor gravida. Etiam nisi quam, facilisis in urna in, euismod pulvinar felis. Donec ac convallis arcu, ac feugiat dolor. Praesent eu lacus sed nulla congue laoreet. Aenean vel venenatis.");
+
+            //reading from file
+            FileHandler.readFromFile(filename);
         }
 
         static String handler(string value)
