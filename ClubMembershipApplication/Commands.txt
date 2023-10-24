@@ -1,0 +1,17 @@
+
+# installing ef tool
+# globally install dotnet ef tool
+dotnet tool install --global dotnet-ef
+
+#Command to run the project
+dotnet run
+
+#add a package
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+
+# command to add migration
+dotnet ef migrations add InitialMigration
+
+#remove migrations
+dotnet ef migrations remove
