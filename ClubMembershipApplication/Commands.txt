@@ -13,5 +13,8 @@ dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 # command to add migration
 dotnet ef migrations add InitialMigration
 
+# update database Command
+dotnet ef database update
+
 #remove migrations
 dotnet ef migrations remove
