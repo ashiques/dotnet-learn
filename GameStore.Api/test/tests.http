@@ -6,6 +6,32 @@ GET http://localhost:5035/
 GET http://localhost:5035/games
 
 
+
+### Create request
+POST http://localhost:5035/games
+Content-Type: application/json
+
+{
+    "name":"NFS Most Wanted",
+    "genre":"Racing",
+    "price":45.0,
+    "releaseDate":"2011-10-20"
+}
+
+
+### Update request
+Put http://localhost:5035/games/3
+Content-Type: application/json
+
+{
+    "name":"MindCraft",
+    "genre":"RPG",
+    "price":99.0,
+    "releaseDate":"2014-10-20"
+}
+
+
+
 ### Get single game
 GET http://localhost:5035/games/2
 
