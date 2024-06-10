@@ -1,0 +1,14 @@
+### Testing the basic endpoint
+GET http://localhost:5035/
+
+
+### Testing get all games
+GET http://localhost:5035/games
+
+
+### Get single game
+GET http://localhost:5035/games/2
+
+
+### Delete single game
+DELETE  http://localhost:5035/games/2
